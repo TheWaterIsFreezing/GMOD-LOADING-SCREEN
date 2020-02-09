@@ -5,6 +5,7 @@ var path = require("path");
 var url = require("url");
 SteamAPI = require("steamapi");
 
+const port = 8080; //process.en.PORT || 8080
 const steam = new SteamAPI("steam-api-key");
 console.log(steam);
 steam.getUserSummary("76561198175267558").then(summary => {
@@ -22,6 +23,6 @@ app.get("/bilder/", function(req, res) {
   });
 });
 
-app.listen(process.en.PORT || 8080, () => {
+app.listen(port, () => {
   console.log("Server started");
 });
