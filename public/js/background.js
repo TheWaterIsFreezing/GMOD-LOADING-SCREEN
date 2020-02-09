@@ -15,7 +15,10 @@ function switch_p(pictures) {
   var $img = $('<img src="' + full + '">');
   console.log(full);
   $img.bind("load", function() {
-    $("body").css("background-image", "url(" + full + ")");
+    $("body").css(
+      "background-image",
+      "url(http://gm-loading-screen.herokuapp.com/bilder/gm_construct0487.jpg)"
+    );
   });
   setTimeout(() => {
     switch_p(pictures);
