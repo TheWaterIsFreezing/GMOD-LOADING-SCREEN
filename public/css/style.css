@@ -2,6 +2,9 @@ html {
   width: 100vw;
   height: 100vh;
 }
+body {
+  background-image: url(https://images.wallpaperscraft.com/image/mountains_clouds_trees_snow_119169_3840x2160.jpg);
+}
 @keyframes fade {
   0% {
     opacity: 5%;
