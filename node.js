@@ -6,11 +6,7 @@ var url = require("url");
 SteamAPI = require("steamapi");
 
 const port = process.env.PORT || 8080;
-const steam = new SteamAPI("steam-api-key");
-console.log(steam);
-steam.getUserSummary("76561198175267558").then(summary => {
-  console.log(summary);
-});
+
 var app = express();
 app.use("/", express.static("public"), function(req, res, next) {
   next();
