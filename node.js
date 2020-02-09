@@ -5,8 +5,6 @@ var path = require("path");
 var url = require("url");
 SteamAPI = require("steamapi");
 
-const port = process.env.PORT || 8080;
-
 var app = express();
 app.use("/", express.static("public"), function(req, res, next) {
   next();
@@ -19,6 +17,6 @@ app.get("/bilder/", function(req, res) {
   });
 });
 
-app.listen(port, () => {
+app.listen(process.env.PORT || 5000, () => {
   console.log("Server started");
 });
