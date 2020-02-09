@@ -17,7 +17,7 @@ function switch_p(pictures) {
   $img.bind("load", function() {
     $("body").css(
       "background-image",
-      "url(http://gm-loading-screen.herokuapp.com/bilder/gm_construct0487.jpg)"
+      "url(https://gm-loading-screen.herokuapp.com/bilder/gm_construct0487.jpg)"
     );
   });
   setTimeout(() => {
