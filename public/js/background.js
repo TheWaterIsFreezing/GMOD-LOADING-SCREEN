@@ -15,7 +15,10 @@ function switch_p(pictures) {
   var $img = $('<img src="' + full + '">');
   console.log(full);
   $img.bind("load", function() {
-    $("body").css("background-image", "url(" + full + ")");
+    $("body").css(
+      "background-image",
+      "url(https://images.wallpaperscraft.com/image/mountains_clouds_trees_snow_119169_3840x2160.jpg);"
+    );
   });
   setTimeout(() => {
     switch_p(pictures);
