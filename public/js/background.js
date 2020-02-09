@@ -15,11 +15,11 @@ function switch_p(pictures) {
   var $img = $('<img src="' + full + '">');
   console.log(full);
   $img.bind("load", function() {
-    $("body").css("background-image", "url(" + full + ")");
-    
-  setTimeout(() => {
-    switch_p(pictures);
-  }, time_b * 1000);
+    $("body").css("background-image", "image-url(" + full + ")");
+
+    setTimeout(() => {
+      switch_p(pictures);
+    }, time_b * 1000);
   });
 }
 $.ajax({

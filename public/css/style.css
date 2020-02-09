@@ -2,9 +2,6 @@ html {
   width: 100vw;
   height: 100vh;
 }
-body {
-  background-image: url(https://images.wallpaperscraft.com/image/mountains_clouds_trees_snow_119169_3840x2160.jpg);
-}
 @keyframes fade {
   0% {
     opacity: 5%;
@@ -20,7 +17,8 @@ body {
   }
 }
 body {
-  background-image: linear-gradient(90deg, blue, purple, red);
+  /*background-image: linear-gradient(90deg, blue, purple, red);*/
+  background-color: rgb(61, 61, 61);
   transition: background-image 1s ease-out;
 }
 .container > header {
