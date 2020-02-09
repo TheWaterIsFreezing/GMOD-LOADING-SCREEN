@@ -13,6 +13,7 @@ function switch_p(pictures) {
   let full = window.location.href + "bilder/" + single;
 
   var $img = $('<img src="' + full + '">');
+  console.log(full);
   $img.bind("load", function() {
     $("body").css("background-image", "url(" + full + ")");
   });
