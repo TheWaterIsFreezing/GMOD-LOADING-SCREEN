@@ -48,7 +48,7 @@ body {
   animation: fade-away 2s forwards;
 }
 .fade {
-  animation: fade 2s 1;
+  animation: fade 2s forwards;
 }
 html * {
   margin: 0;
