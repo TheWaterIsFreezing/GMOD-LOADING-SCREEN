@@ -4,31 +4,37 @@ html {
 }
 @keyframes fade {
   0% {
-    opacity: 5%;
-  }
-  20% {
-    opacity: 100%;
-  }
-  80% {
-    opacity: 100%;
+    opacity: 0;
   }
   100% {
-    opacity: 0%;
+    opacity: 1;
+  }
+}
+@keyframes fade-away {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 body {
   /*background-image: linear-gradient(90deg, blue, purple, red);*/
-  background-color: rgb(61, 61, 61);
-  transition: background-image 1s ease-out;
+  background-color: rgb(37, 37, 37);
 }
-#background {
+.background {
+  visibility: hidden;
   position: absolute;
   height: 100vh;
   min-width: 100vw;
   background-repeat: no-repeat;
   border: 0 !important;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 5s;
   opacity: 1;
+}
+.show {
+  visibility: visible !important;
 }
 .container > header {
   text-align: center;
@@ -38,8 +44,11 @@ body {
   color: white;
   font-weight: bold;
 }
+.fade-away {
+  animation: fade-away 2s forwards;
+}
 .fade {
-  animation: 15s 1 fade;
+  animation: fade 2s 1;
 }
 html * {
   margin: 0;

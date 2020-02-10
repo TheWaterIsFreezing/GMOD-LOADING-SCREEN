@@ -19,14 +19,27 @@ setInterval(() => {
       .removeClass("transitioning-src");
   }, 400); // Ensure timeout matches transition time, remove transition class
 }, 6000);
+
+let f = 1;
+let s = 2;
 function switch_p(pictures) {
   let single = pictures[Math.round(Math.random() * pictures.length - 1)];
   let full = window.location.href + "bilder/" + single;
 
+  temp = f;
+  f = s;
+  s = temp;
+
   var $img = $('<img src="' + full + '">');
-  console.log(full);
   $img.bind("load", function() {
-    background.setAttribute("src", full);
+    $(".background:nth-child(" + s + ")")
+      .removeClass("fade")
+      .addClass("fade-away");
+    $(".background:nth-child(" + f + ")")
+      .addClass("show")
+      .addClass("fade")
+      .attr("src", full)
+      .removeClass("fade-away");
 
     setTimeout(() => {
       switch_p(pictures);
