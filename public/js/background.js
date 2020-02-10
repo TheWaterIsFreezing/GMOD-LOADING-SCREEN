@@ -36,10 +36,10 @@ function switch_p(pictures) {
       .removeClass("fade")
       .addClass("fade-away");
     $(".background:nth-child(" + f + ")")
-      .addClass("show")
-      .addClass("fade")
       .attr("src", full)
-      .removeClass("fade-away");
+      .removeClass("fade-away")
+      .addClass("show")
+      .addClass("fade");
 
     setTimeout(() => {
       switch_p(pictures);
