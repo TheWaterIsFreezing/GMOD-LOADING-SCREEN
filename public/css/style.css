@@ -106,11 +106,13 @@ html * {
 }
 .server img {
   float: left;
+  position: relative;
   object-fit: cover;
   object-position: center center;
-  width: 70px;
+  width: 80px;
   margin-left: 5%;
-  height: 75%;
+  transform: translateY(5%);
+  height: 80px;
   border-radius: 3px;
 }
 .server ul {
