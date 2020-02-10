@@ -11,16 +11,28 @@ app.use("/", express.static("public"), function(req, res, next) {
   next();
 });
 
-app.get("/steam/", () => {
-  steam.getUserSummary("76561198175267558").then(summary => {
+app.get("/index.html", function(req, res, next) {
+  console.log("ind");
+  next();
+  var id = undefined;
+});
+//http://localhost:5000/steam/?steamid=76561198175267558
+app.get("/steam/", (req, res, next) => {
+  var id = req.query.steamid;
+  console.log(id);
+  steam.getUserSummary(id).then(summary => {
     console.log(summary);
+    console.log(summary.avatar.large);
+    res.send(summary.avatar.large + ";");
+    next();
   });
 });
 
-app.get("/bilder/", function(req, res) {
+app.get("/bilder/", function(req, res, next) {
   fs.readdir("public/bilder", function(err, files) {
     console.log(files);
     res.send(files);
+    next();
   });
 });
 
