@@ -11,10 +11,11 @@ app.use("/", express.static("public"), function(req, res, next) {
   next();
 });
 
-app.get("/steam/", ()=>{
-  steam.getUserSummary('76561198175267558').then(summary => {
+app.get("/steam/", () => {
+  steam.getUserSummary("76561198175267558").then(summary => {
     console.log(summary);
-})
+  });
+});
 
 app.get("/bilder/", function(req, res) {
   fs.readdir("public/bilder", function(err, files) {
