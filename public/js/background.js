@@ -1,7 +1,7 @@
 console.log(window.location.href);
 
 pictures_url = window.location.href.replace("index.html", "bilder/");
-background = document.body.style.backgroundImage;
+var background = document.getElementById("background");
 console.log(pictures_url);
 
 //http://127.0.0.1:5500/Lasse-GM/bilder/scp-13460002.jpg
@@ -15,6 +15,8 @@ function switch_p(pictures) {
   var $img = $('<img src="' + full + '">');
   console.log(full);
   $img.bind("load", function() {
+    $("body").css("background-image", "url(" + full + ")");
+    background.setAttribute("src", full);
     setTimeout(() => {
       switch_p(pictures);
     }, time_b * 1000);
