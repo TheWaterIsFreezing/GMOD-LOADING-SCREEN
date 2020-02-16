@@ -26,7 +26,7 @@ function switch_p(pictures) {
   });
 }
 $.ajax({
-  url: folder,
+  url: "bilder/",
   success: function(data) {
     switch_p(data);
   }
