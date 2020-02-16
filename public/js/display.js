@@ -4,7 +4,7 @@ server_h = document.getElementById("logo");
 load = document.getElementsByClassName("load");
 user_img = document.getElementById("player_img");
 
-server_h.innerHTML = "sdasdasd";
+console.log(server_h);
 function GameDetails(
   servername,
   serverurl,
