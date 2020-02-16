@@ -32,8 +32,8 @@ function GameDetails(
       v = data.split(";");
       $("#player_img").attr("src", v[0]);
       document.getElementsByClassName("user")[0].innerHTML = v[1]; //name
-      document.getElementsByClassName("user")[1].innerHTML = v[2]; //id
-      document.getElementsByClassName("user")[2].innerHTML = v[3]; // logoff
+      document.getElementsByClassName("user")[1].innerHTML = "ID:" + v[2]; //id
+      //document.getElementsByClassName("user")[2].innerHTML = v[3]; // logoff
     }
   });
 }
