@@ -1,9 +1,8 @@
 server = document.getElementsByClassName("server-i");
 user = document.getElementsByClassName("user");
-servername_h = document.getElementsById("logo");
+servername_h = document.getElementById("logo");
 load = document.getElementsByClassName("load");
 user_img = document.getElementById("player_img");
-servername_h.innerHTML = "sdaasd";
 function GameDetails(
   servername,
   serverurl,
