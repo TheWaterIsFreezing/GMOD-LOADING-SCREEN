@@ -28,11 +28,9 @@ function GameDetails(
     }
   });
 }
-//var steamid = "76561198175267558";
-console.log(load);
 function DownloadingFile(fileName) {
-  load[3].innerHTML = fileName;
+  load[1].innerHTML = fileName;
 }
 function SetStatusChanged(status) {
-  load[1].innerHTML = "Getting Addon " + status;
+  load[3].innerHTML = status;
 }
