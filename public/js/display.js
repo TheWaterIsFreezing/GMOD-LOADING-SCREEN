@@ -3,9 +3,7 @@ user = document.getElementsByClassName("user");
 servername_h = document.getElementById("logo");
 load = document.getElementsByClassName("load");
 user_img = document.getElementById("player_img");
-if (servername_h.innerHTML.length > 12) {
-  servername_h.style.fontSize = "25px";
-}
+
 function GameDetails(
   servername,
   serverurl,
