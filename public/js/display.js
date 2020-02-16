@@ -1,8 +1,10 @@
-server = document.getElementsByClassName("server-i");
-user = document.getElementsByClassName("user");
-server = document.getElementById("logo");
-load = document.getElementsByClassName("load");
-user_img = document.getElementById("player_img");
+var server = document.getElementsByClassName("server-i");
+var user = document.getElementsByClassName("user");
+var server_h = document.getElementById("logo");
+var load = document.getElementsByClassName("load");
+var user_img = document.getElementById("player_img");
+
+server_h.innerHTML = "sdasdasd";
 function GameDetails(
   servername,
   serverurl,
@@ -11,7 +13,8 @@ function GameDetails(
   steamid,
   gamemode
 ) {
-  server.innerHTML = servername;
+  console.log(servername);
+  server_h.innerHTML = servername;
   server[0].innerHTML = gamemode;
   server[1].innerHTML = mapname;
   server[2].innerHTML = maxplayers + " Slots";
