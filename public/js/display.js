@@ -14,7 +14,6 @@ function GameDetails(
   gamemode
 ) {
   console.log(servername);
-  server_h.innerHTML = servername;
   server[0].innerHTML = gamemode;
   server[1].innerHTML = mapname;
   server[2].innerHTML = maxplayers + " Slots";
