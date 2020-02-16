@@ -24,12 +24,15 @@ function GameDetails(
     success: function(data) {
       v = data.split(";");
       $("#player_img").attr("src", v[0]);
+      document.getElementsByClassName("user")[0].innerHTML = v[1]; //name
+      document.getElementsByClassName("user")[1].innerHTML = v[2]; //id
+      document.getElementsByClassName("user")[2].innerHTML = v[3]; // logoff
     }
   });
 }
 function DownloadingFile(fileName) {
-  load[1].innerHTML = "Getting Addon " + fileName;
+  load[0].innerHTML = "Getting Addon " + fileName;
 }
 function SetStatusChanged(status) {
-  load[3].innerHTML = "." + status;
+  load[1].innerHTML = status;
 }
