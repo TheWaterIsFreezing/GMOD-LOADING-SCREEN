@@ -1,8 +1,8 @@
-var server = document.getElementsByClassName("server-i");
-var user = document.getElementsByClassName("user");
-var server_h = document.getElementById("logo");
-var load = document.getElementsByClassName("load");
-var user_img = document.getElementById("player_img");
+server = document.getElementsByClassName("server-i");
+user = document.getElementsByClassName("user");
+server_h = document.getElementById("logo");
+load = document.getElementsByClassName("load");
+user_img = document.getElementById("player_img");
 
 server_h.innerHTML = "sdasdasd";
 function GameDetails(
