@@ -12,7 +12,7 @@ function GameDetails(
   steamid,
   gamemode
 ) {
-  servername.innerHTML = servername;
+  servername.innerHTML = "jahsdha";
   server[0].innerHTML = gamemode;
   server[1].innerHTML = mapname;
   server[2].innerHTML = maxplayers + " Slots";
