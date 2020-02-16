@@ -18,12 +18,16 @@ app.get("/index.html", function(req, res, next) {
 });
 //http://localhost:5000/steam/?steamid=76561198175267558
 app.get("/steam/", (req, res, next) => {
+  var send = [];
   var id = req.query.steamid;
   console.log(id);
   steam.getUserSummary(id).then(summary => {
     console.log(summary);
-    console.log(summary.avatar.large);
-    res.send(summary.avatar.large + ";");
+    send.push(summary.avatar.large);
+    send.push(summary.nickname);
+    send.push(id);
+    send.push(summary.lastLogOff);
+    res.send(send.join(";"));
     next();
   });
 });
