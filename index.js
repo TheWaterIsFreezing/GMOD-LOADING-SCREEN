@@ -14,7 +14,6 @@ app.use("/", express.static("public"), function(req, res, next) {
 app.get("/index.html", function(req, res, next) {
   console.log("ind");
   next();
-  var id = undefined;
 });
 //http://localhost:5000/steam/?steamid=76561198175267558
 app.get("/steam/", (req, res, next) => {

@@ -3,6 +3,10 @@ user = document.getElementsByClassName("user");
 servername_h = document.getElementById("logo");
 load = document.getElementsByClassName("load");
 user_img = document.getElementById("player_img");
+
+if (servername_h.innerHTML.lenght > 12) {
+  servername.style.fontSize = "25px";
+}
 function GameDetails(
   servername,
   serverurl,
@@ -12,6 +16,11 @@ function GameDetails(
   gamemode
 ) {
   servername_h.innerHTML = servername;
+
+  if (servername_h.innerHTML.lenght > 12) {
+    servername.style.fontSize = "25px";
+  }
+
   server[0].innerHTML = gamemode;
   server[1].innerHTML = mapname;
   server[2].innerHTML = maxplayers + " Slots";
