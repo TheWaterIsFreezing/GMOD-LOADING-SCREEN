@@ -1,6 +1,6 @@
 server = document.getElementsByClassName("server-i");
 user = document.getElementsByClassName("user");
-servername = document.getElementsByClassName("logo");
+servername = document.getElementById("logo");
 load = document.getElementsByClassName("load");
 user_img = document.getElementById("player_img");
 
@@ -12,7 +12,7 @@ function GameDetails(
   steamid,
   gamemode
 ) {
-  servername[0].innerHTML = "servername";
+  servername.innerHTML = servername;
   server[0].innerHTML = gamemode;
   server[1].innerHTML = mapname;
   server[2].innerHTML = maxplayers + " Slots";
