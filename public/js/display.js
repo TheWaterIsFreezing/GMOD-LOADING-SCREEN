@@ -16,8 +16,9 @@ function GameDetails(
 
   if (servername_h.innerHTML.lenght > 12) {
     servername.style.fontSize = "25px";
+  } else if (servername_h.innerHTML.lenght > 18) {
+    servername.style.fontSize = "15px";
   }
-
   server[0].innerHTML = gamemode;
   server[1].innerHTML = mapname;
   server[2].innerHTML = maxplayers + " Slots";
