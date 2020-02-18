@@ -45,6 +45,9 @@ body {
   color: white;
   font-weight: bold;
 }
+#logo {
+  margin-top: 5%;
+}
 .fade-away {
   animation: fade-away 2s forwards;
 }
@@ -74,7 +77,7 @@ html * {
   margin: 15% 0% 0% 50%;
   transform: translateX(-50%);
   width: 80%;
-  border-radius: 5px;
+  border-radius: 15px;
   height: auto;
   font-size: 18.75px;
   padding-bottom: 20px;
