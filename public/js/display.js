@@ -4,6 +4,7 @@ servername_h = document.getElementById("logo");
 load = document.getElementsByClassName("load");
 user_img = document.getElementById("player_img");
 
+console.log(servername_h.innerHTML.length);
 function GameDetails(
   servername,
   serverurl,
@@ -14,10 +15,10 @@ function GameDetails(
 ) {
   servername_h.innerHTML = servername;
 
-  if (servername_h.innerHTML.lenght > 12) {
+  if (servername_h.innerHTML.length > 20) {
+    servername.style.fontSize = "30px";
+  } else if (servername_h.innerHTML.length > 40) {
     servername.style.fontSize = "25px";
-  } else if (servername_h.innerHTML.lenght > 18) {
-    servername.style.fontSize = "15px";
   }
   server[0].innerHTML = gamemode;
   server[1].innerHTML = mapname;
