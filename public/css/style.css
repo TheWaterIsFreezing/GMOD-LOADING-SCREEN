@@ -123,9 +123,6 @@ section header {
   height: 80px;
   border-radius: 3px;
 }
-#player_img {
-  border-radius: 50% !important;
-}
 .server ul {
   margin-left: 8px;
   display: inline-block;
