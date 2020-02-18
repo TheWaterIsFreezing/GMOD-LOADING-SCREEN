@@ -16,9 +16,9 @@ function GameDetails(
   servername_h.innerHTML = servername;
 
   if (servername_h.innerHTML.length > 20) {
-    servername.style.fontSize = "30px";
+    servername_h.style.fontSize = "30px";
   } else if (servername_h.innerHTML.length > 40) {
-    servername.style.fontSize = "25px";
+    servername_h.style.fontSize = "25px";
   }
   server[0].innerHTML = gamemode;
   server[1].innerHTML = mapname;
