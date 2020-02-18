@@ -82,6 +82,9 @@ html * {
   border: 3px solid rgb(29, 32, 34);
   box-shadow: 3px 3px 10px rgb(34, 25, 27);
 }
+section header {
+  padding: 5px 0;
+}
 .rules {
   margin-top: 10% !important;
 }
@@ -119,6 +122,10 @@ html * {
   transform: translateY(5%);
   height: 80px;
   border-radius: 3px;
+}
+#player_img {
+  border-radius: 50% !important;
+  visibility: hidden;
 }
 .server ul {
   margin-left: 8px;
