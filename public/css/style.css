@@ -29,6 +29,7 @@ body {
   height: 100vh;
   min-width: 100vw;
   background-repeat: no-repeat;
+  object-fit: cover;
   border: 0 !important;
   transition: opacity 5s;
   opacity: 1;
@@ -83,6 +84,9 @@ html * {
 }
 .rules {
   margin-top: 10% !important;
+}
+.rules li {
+  margin-bottom: 3px;
 }
 .split {
   width: 100%;
