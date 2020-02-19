@@ -4,7 +4,20 @@ servername_h = document.getElementById("logo");
 load = document.getElementsByClassName("load");
 user_img = document.getElementById("player_img");
 
-console.log(servername_h.innerHTML.length);
+function smaller_text(id) {
+  item = document.getElementById(id);
+  if (
+    document.getElementsByClassName("container")[0].offsetWidth <
+    item.offsetWidth + 10
+  ) {
+    fontSize = parseFloat(
+      window.getComputedStyle(servername_h, null).getPropertyValue("font-size")
+    );
+    item.style.fontSize = fontSize - 1 + "px";
+    return true;
+  }
+  return false;
+}
 function GameDetails(
   servername,
   serverurl,
@@ -19,6 +32,9 @@ function GameDetails(
     servername_h.style.fontSize = "30px";
   } else if (servername_h.innerHTML.length > 40) {
     servername_h.style.fontSize = "25px";
+  }
+  while (line_break("logo") == true) {
+    line_break("logo");
   }
   server[0].innerHTML = gamemode;
   server[1].innerHTML = mapname;

@@ -31,22 +31,25 @@ body {
   background-repeat: no-repeat;
   object-fit: cover;
   border: 0 !important;
-  transition: opacity 5s;
   opacity: 1;
 }
 .show {
   visibility: visible !important;
 }
-.container > header {
-  text-align: center;
-  text-shadow: 3px 3px 10px black;
+.con-l {
   margin-top: 10px;
-  font-size: 33px;
-  color: white;
-  font-weight: bold;
 }
 #logo {
+  font-size: 35px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  text-shadow: 3px 3px 10px black;
   margin-top: 5%;
+  margin-left: 50%;
+  white-space: nowrap;
+  transform: translateX(-50%);
+  display: inline-block;
 }
 .fade-away {
   animation: fade-away 2s forwards;
@@ -138,15 +141,12 @@ section header {
   margin-bottom: 50px;
   text-align: center;
   width: 70%;
-}
-.loading {
-  margin-left: 50%;
-  transform: translateX(-50%);
-}
-.loading {
   text-shadow: 3px 3px 10px rgb(0, 0, 0);
   color: rgb(94, 83, 83);
   font-size: 18px;
+
+  margin-left: 50%;
+  transform: translateX(-50%);
 }
 .loading ul {
   margin: 0;
