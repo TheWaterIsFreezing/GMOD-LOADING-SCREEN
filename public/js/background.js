@@ -23,7 +23,7 @@ function parse_query_string(query) {
   }
   return query_string;
 }
-var dir = parse_query_string(window.location.search.substring(1)).bilder;
+var dir = parse_query_string(window.location.search.substring(1)).p;
 if (dir == undefined) {
   dir = "default";
 }
