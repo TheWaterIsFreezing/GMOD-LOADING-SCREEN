@@ -8,9 +8,6 @@ app.use("/", express.static("public"), function(req, res, next) {
   next();
 });
 
-app.get("/index.html", function(req, res, next) {
-  next();
-});
 //http://localhost:5000/steam/?steamid=76561198175267558
 app.get("/steam/", (req, res, next) => {
   var send = [];
@@ -20,13 +17,24 @@ app.get("/steam/", (req, res, next) => {
     send.push(summary.nickname);
     send.push(id);
     send.push(summary.lastLogOff);
+
     res.send(send.join(";"));
     next();
   });
 });
 
 app.get("/bilder/", function(req, res, next) {
-  fs.readdir("public/bilder", function(err, files) {
+  var dir = req.query.p; //fetch dir name from url
+
+  fs.readdir("public/bilder/" + dir, function(err, files) {
+    if (err) {
+      if (err.code == "ENOENT") {
+        // ENOENT: no such file or directory
+        res.send("invalid path");
+        next();
+        return;
+      }
+    }
     res.send(files);
     next();
   });
