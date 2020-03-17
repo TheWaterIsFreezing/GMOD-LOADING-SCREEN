@@ -6,6 +6,8 @@ user_img = document.getElementById("player_img");
 
 function smaller_text(id) {
   item = document.getElementById(id);
+
+  //Adjust size of Header to the available width
   if (
     document.getElementsByClassName("container")[0].offsetWidth <
     item.offsetWidth + 10
