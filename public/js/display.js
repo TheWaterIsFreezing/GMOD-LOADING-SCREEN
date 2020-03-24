@@ -28,6 +28,9 @@ function GameDetails(
   steamid,
   gamemode
 ) {
+  if (servername.length > 80) {
+    servername = "[GER] REE Verrücktes Roleplay";
+  }
   servername_h.innerHTML = servername;
 
   if (servername_h.innerHTML.length > 20) {
