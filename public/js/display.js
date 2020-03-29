@@ -45,7 +45,7 @@ function filter_servername(name) {
   let splitted = name.split(" ");
   for (let i = 0; i < splitted.length; i++) {
     if (splitted[i] in server_names) {
-      name = splitted[i];
+      name = server_names[splitted[i]];
       break;
     }
   }
