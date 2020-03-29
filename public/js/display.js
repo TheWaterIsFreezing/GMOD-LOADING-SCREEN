@@ -4,22 +4,6 @@ servername_h = document.getElementById("logo");
 load = document.getElementsByClassName("load");
 user_img = document.getElementById("player_img");
 
-function smaller_text(id) {
-  item = document.getElementById(id);
-
-  //Adjust size of Header to the available width
-  if (
-    document.getElementsByClassName("container")[0].offsetWidth <
-    item.offsetWidth + 10
-  ) {
-    fontSize = parseFloat(
-      window.getComputedStyle(servername_h, null).getPropertyValue("font-size")
-    );
-    item.style.fontSize = fontSize - 1 + "px";
-    return true;
-  }
-  return false;
-}
 function GameDetails(
   servername,
   serverurl,
@@ -28,9 +12,7 @@ function GameDetails(
   steamid,
   gamemode
 ) {
-  if (servername.length > 80) {
-    servername = "[GER] REE Verrücktes Roleplay";
-  }
+  servername = filter_severname(servername);
   servername_h.innerHTML = servername;
 
   if (servername_h.innerHTML.length > 20) {
@@ -58,6 +40,35 @@ function GameDetails(
       //document.getElementsByClassName("user")[2].innerHTML = v[3]; // logoff
     }
   });
+}
+function filter_severname(name) {
+  let splitted = name.split(" ");
+  for (let i = 0; i < splitted.length; i++) {
+    if (splitted[i] == "SCP-RP") {
+      name = "[GER] REE SCP-RP Semi Serious ";
+      break;
+    } else if (splitted[i] == "Roleplay") {
+      name = "[GER] REE Verrücktes Roleplay";
+      break;
+    }
+  }
+  return name;
+}
+function smaller_text(id) {
+  item = document.getElementById(id);
+
+  //Adjust size of Header to the available width
+  if (
+    document.getElementsByClassName("container")[0].offsetWidth <
+    item.offsetWidth + 10
+  ) {
+    fontSize = parseFloat(
+      window.getComputedStyle(servername_h, null).getPropertyValue("font-size")
+    );
+    item.style.fontSize = fontSize - 1 + "px";
+    return true;
+  }
+  return false;
 }
 function DownloadingFile(fileName) {
   load[0].innerHTML = "Getting Addon " + fileName;
