@@ -12,7 +12,7 @@ function GameDetails(
   steamid,
   gamemode
 ) {
-  servername = filter_severname(servername);
+  servername = filter_servername(servername);
   servername_h.innerHTML = servername;
 
   if (servername_h.innerHTML.length > 20) {
@@ -41,14 +41,11 @@ function GameDetails(
     }
   });
 }
-function filter_severname(name) {
+function filter_servername(name) {
   let splitted = name.split(" ");
   for (let i = 0; i < splitted.length; i++) {
-    if (splitted[i] == "SCP-RP") {
-      name = "[GER] REE SCP-RP Semi Serious ";
-      break;
-    } else if (splitted[i] == "Roleplay") {
-      name = "[GER] REE Verrücktes Roleplay";
+    if (splitted[i] in server_names) {
+      name = splitted[i];
       break;
     }
   }
