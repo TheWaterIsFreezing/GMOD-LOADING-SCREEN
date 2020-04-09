@@ -4,7 +4,8 @@ SteamAPI = require("steamapi");
 
 steam = new SteamAPI("E66E1E5132F5A2056AB272FC6D47180F");
 var app = express();
-app.use("/", express.static("public"), function(req, res, next) {
+app.use("/", express.static("public"), function (req, res, next) {
+  console.log("got request " + req.ip);
   next();
 });
 
@@ -12,7 +13,7 @@ app.use("/", express.static("public"), function(req, res, next) {
 app.get("/steam/", (req, res, next) => {
   var send = [];
   var id = req.query.steamid;
-  steam.getUserSummary(id).then(summary => {
+  steam.getUserSummary(id).then((summary) => {
     send.push(summary.avatar.large);
     send.push(summary.nickname);
     send.push(id);
@@ -23,10 +24,10 @@ app.get("/steam/", (req, res, next) => {
   });
 });
 
-app.get("/bilder/", function(req, res, next) {
+app.get("/bilder/", function (req, res, next) {
   var dir = req.query.p; //fetch dir name from url
 
-  fs.readdir("public/bilder/" + dir, function(err, files) {
+  fs.readdir("public/bilder/" + dir, function (err, files) {
     if (err) {
       if (err.code == "ENOENT") {
         // ENOENT: no such file or directory
