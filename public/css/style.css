@@ -143,7 +143,7 @@ section header {
   text-align: center;
   width: 70%;
   text-shadow: 3px 3px 10px rgb(0, 0, 0);
-  color: rgb(94, 83, 83);
+  color: rgb(107, 98, 98);
   font-size: 18px;
 
   margin-left: 50%;
@@ -152,9 +152,11 @@ section header {
 .loading ul {
   margin: 0;
 }
+/* makes the lower one darker 
 .loading li:last-child {
   color: rgb(63, 57, 57);
 }
+*/
 @keyframes q {
   0% {
     opacity: 0;
