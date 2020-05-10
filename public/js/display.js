@@ -43,6 +43,7 @@ function GameDetails(
 }
 function filter_servername(url) {
   for (let i = 0; i < url.length; i++) {
+    console.log(url);
     if (url[i] in server_urls) {
       console.log(url);
       name = server_urls[url[i]];
