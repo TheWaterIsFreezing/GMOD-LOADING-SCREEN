@@ -32,20 +32,20 @@ function GameDetails(
   $.ajax({
     url: "steam/",
     data: "steamid=" + steamid,
-    success: function(data) {
+    success: function (data) {
       v = data.split(";");
       $("#player_img").attr("src", v[0]);
       document.getElementsByClassName("user")[0].innerHTML = v[1]; //name
       document.getElementsByClassName("user")[1].innerHTML = "ID: " + v[2]; //id
       //document.getElementsByClassName("user")[2].innerHTML = v[3]; // logoff
-    }
+    },
   });
 }
-function filter_servername(name) {
-  let splitted = name.split(" ");
-  for (let i = 0; i < splitted.length; i++) {
-    if (splitted[i] in server_names) {
-      name = server_names[splitted[i]];
+function filter_servername(url) {
+  for (let i = 0; i < url.length; i++) {
+    if (url[i] in server_urls) {
+      console.log(url);
+      name = server_urls[url[i]];
       break;
     }
   }
