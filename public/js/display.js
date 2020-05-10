@@ -41,12 +41,11 @@ function GameDetails(
     },
   });
 }
-function filter_servername(url) {
-  for (let i = 0; i < url.length; i++) {
-    console.log(url);
-    if (url[i] in server_urls) {
-      console.log(url);
-      name = server_urls[url[i]];
+function filter_servername(name) {
+  let splitted = name.split(" ");
+  for (let i = 0; i < splitted.length; i++) {
+    if (splitted[i] in server_names) {
+      name = server_names[splitted[i]];
       break;
     }
   }
