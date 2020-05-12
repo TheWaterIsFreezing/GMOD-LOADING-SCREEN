@@ -28,7 +28,6 @@ function GameDetails(
   server[2].innerHTML = maxplayers + " Slots";
 
   user[1].innerHTML = steamid;
-  console.log(steamid);
   $.ajax({
     url: "steam/",
     data: "steamid=" + steamid,
