@@ -23,12 +23,8 @@ function parse_query_string(query) {
   }
   return query_string;
 }
-var dir = parse_query_string(window.location.search.substring(1)).p;
-if (dir == undefined) {
-  dir = "default";
-}
 function switch_p(pictures) {
-  // check if path is valid, if its not a error screen is displayed
+  // check if path is valid, if its not a error screen gets displayed
   if (pictures == null) {
     var full = curl + "bilder/invalid.jpg";
     $(".background:nth-child(" + f + ")")
@@ -59,5 +55,8 @@ function switch_p(pictures) {
     }, time_b * 1000);
   });
 }
-console.log(links);
+var dir = parse_query_string(window.location.search.substring(1)).p;
+if (dir == undefined) {
+  dir = "default";
+}
 switch_p(links);
