@@ -3,29 +3,11 @@ html {
   height: 100%;
   overflow-x: hidden;
 }
-@keyframes fade {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes fade-away {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    visibility: hidden;
-  }
-}
 body {
   /*background-image: linear-gradient(90deg, blue, purple, red);*/
   background-color: rgb(37, 37, 37);
 }
 .background {
-  visibility: hidden;
   position: absolute;
   height: 100%;
   min-width: 100vw;
@@ -33,9 +15,6 @@ body {
   object-fit: cover;
   border: 0 !important;
   opacity: 1;
-}
-.show {
-  visibility: visible !important;
 }
 .con-l {
   margin-top: 10px;
@@ -52,11 +31,27 @@ body {
   transform: translateX(-50%);
   display: inline-block;
 }
-.fade-away {
-  animation: fade-away 2s forwards;
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-away {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 .fade {
   animation: fade 2s forwards;
+}
+.fade-away {
+  animation: fade-away 2s forwards;
 }
 html * {
   margin: 0;

@@ -40,6 +40,7 @@
         // If the name isnt provided the default name is used.
         var server_names = { "SCP-RP": "[GER] REE SCP-RP", "Roleplay": "[GER] REE Verrücktes Roleplay" };
         var links = {{{ p_links }}};
+        var dir = {{{ dir_name }}}
     </script>
 
     <title>loading-screen</title>
@@ -54,7 +55,7 @@
 
 <body>
     <img class="background" src="" class="fade"></img>
-    <img src="" class="background" alt="">
+    <img src="" class="background">
     <div class="container">
         <div class="con-l">
             <header id="logo">Servername</header>
@@ -77,7 +78,7 @@
                 SERVERINFO
             </header>
             <div class="split"></div>
-            <img src="g.jpg" alt="map" />
+            <img src="gmod_logo.jpg" alt="map" />
             <ul>
                 <li class="server-i">
                     Sandbox
@@ -98,7 +99,7 @@
             {{#if steam.avatar}}
             <img src={{steam.avatar}} alt="player" id="player_img" />
             {{else}}
-            <img src="frage.png" alt="player" id="player_img" />
+            <img src="fragezeichen.png" alt="player" id="player_img" />
             {{/if}}
             <ul>
                 <li class="user">{{steam.nick}}</li>

@@ -12,7 +12,7 @@ app.set("view engine", "hbs");
 
 app.get("/", (req, res) => {
   console.log(req.url);
-  let server = req.query.p;
+  let server = req.query.p || "default";
   let steamid = req.query.steamid;
   let mapname = req.query.mapname || "beach";
 
@@ -28,6 +28,7 @@ app.get("/", (req, res) => {
           steam: steam_d,
           rank: user.rank,
           mapname: mapname,
+          dir_name: JSON.stringify(server),
         });
       });
     });
@@ -72,6 +73,9 @@ function get_steam_data(id, callback) {
     });
 }
 function get_player_info(steamid, server, callback) {
+  if (typeof server != "string") {
+    return;
+  }
   const client = new MongoClient(
     "mongodb+srv://Tim:7O2zJ7oJYBfQjnLG@cluster0-1iia4.mongodb.net/test?retryWrites=true&w=majority",
     { useNewUrlParser: true, useUnifiedTopology: true }
