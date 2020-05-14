@@ -29,7 +29,7 @@ if (dir == undefined) {
 }
 function switch_p(pictures) {
   // check if path is valid, if its not a error screen is displayed
-  if (pictures == "invalid path") {
+  if (pictures == null) {
     var full = curl + "bilder/invalid.jpg";
     $(".background:nth-child(" + f + ")")
       .attr("src", full)
@@ -44,7 +44,7 @@ function switch_p(pictures) {
   s = temp;
 
   var $img = $('<img src="' + full + '">');
-  $img.bind("load", function() {
+  $img.bind("load", function () {
     $(".background:nth-child(" + s + ")")
       .removeClass("fade")
       .addClass("fade-away");
@@ -59,10 +59,5 @@ function switch_p(pictures) {
     }, time_b * 1000);
   });
 }
-
-$.ajax({
-  url: "bilder/?p=" + dir,
-  success: function(data) {
-    switch_p(data);
-  }
-});
+console.log(links);
+switch_p(links);
