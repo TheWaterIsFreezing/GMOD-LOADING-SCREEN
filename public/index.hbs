@@ -95,15 +95,19 @@
                 STATS
             </header>
             <div class="split"></div>
+            {{#if steam.avatar}}
             <img src={{steam.avatar}} alt="player" id="player_img" />
+            {{else}}
+            <img src="frage.png" alt="player" id="player_img" />
+            {{/if}}
             <ul>
                 <li class="user">{{steam.nick}}</li>
                 <li class="user">{{steam.id}}</li>
                 {{#if rank}}
                 <li class="user">{{rank}}</li>
                 {{else}}
-                <li class="user">----------</li">
-                    {{/if}}
+                <li class="user">not available</li>
+                {{/if}}
             </ul>
         </section>
         <div class="loading">
