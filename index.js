@@ -4,7 +4,8 @@ const SteamAPI = require("steamapi");
 const path = require("path");
 const MongoClient = require("mongodb").MongoClient;
 
-steam = new SteamAPI("E66E1E5132F5A2056AB272FC6D47180F");
+steam_api_key = "YOUR_STEAM_API_KEY";
+steam = new SteamAPI(steam_api_key);
 var app = express();
 
 app.set("views", path.join(__dirname, "public"));
@@ -21,7 +22,7 @@ app.get("/", (req, res) => {
     get_steam_data(steamid, function (steam_d) {
       // get steam data like nick, avatar, ...
       get_player_info(steamid, server, function (user) {
-        // get player info, like rank, from db
+        // get player info, like the rank, from db
         res.render("index", {
           // send user data with a handlebars template
           p_links: JSON.stringify(links),
@@ -73,13 +74,18 @@ function get_steam_data(id, callback) {
     });
 }
 function get_player_info(steamid, server, callback) {
-  if (typeof server != "string") {
+  var db_link = "YOUR_MONGO_DB";
+  if (db_link == "YOUR_MONGO_DB") {
+    callback({});
     return;
   }
-  const client = new MongoClient(
-    "mongodb+srv://Tim:7O2zJ7oJYBfQjnLG@cluster0-1iia4.mongodb.net/test?retryWrites=true&w=majority",
-    { useNewUrlParser: true, useUnifiedTopology: true }
-  );
+
+  // if you want to add a mongodb for data from your server like a rank
+  const client = new MongoClient(db_link, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  });
+
   client.connect((err) => {
     if (err) throw err;
     const collection = client.db("user-info").collection(server); // fetch user data for the requested server
