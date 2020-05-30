@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+
+
+    <!--EINSTELLUNGEN-->
+
+    <script type="text/javascript">
+        // Zeit für wechsel von Inhalt
+        var time_b = 30; // Hintergrund  Cooldown
+        var time_q = 40; // Zitate/Sprüche Cooldown
+
+        //Zitate/Sprüche
+        quotes = [
+            "Quotes are great!,customize them in the index.hbs file",
+            "¯\_( ͡👁️ ͜ʖ ͡👁️)_/¯"
+
+        ];
+        // Add headers/names for the the servers the key must be contained in the server 
+        // name and ONLY in his servername! 
+        // If the name isnt provided the default name is used.
+        // We have A very long Title as URL -> Handsome Server 
+        var server_names = { "Example-Server": "Nitrado.de", "XXX": "XXX" };
+        var links = {{{ p_links }}};
+        var dir = {{{ dir_name }}}
+    </script>
+
+    <title>loading-screen</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" type="image/x-icon" href="steam_logo.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+</head>
+
+<body>
+    <img class="background" src="" class="fade"></img>
+    <img src="" class="background">
+    <div class="container">
+        <div class="con-l">
+            <header id="logo">Servername</header>
+        </div>
+        <section class="rules">
+            <header>
+                REGELN
+            </header>
+            <div class="split"></div>
+            <ul>
+                <li>1. RDM ist verboten</li>
+                <li>2. Bugusing ist verboten</li>
+                <li>3. Cheating ist verboten</li>
+                <li>4. Keine Beleidigungen</li>
+                <li>5. Lies die Regeln</li>
+            </ul>
+        </section>
+        <section class="server">
+            <header>
+                SERVERINFO
+            </header>
+            <div class="split"></div>
+            <img src="gmod_logo.jpg" alt="map" />
+            <ul>
+                <li class="server-i">
+                    Sandbox
+                </li>
+                <li class="server-i">
+                    {{mapname}}
+                </li>
+                <li class="server-i">
+                    64 Slots
+                </li>
+            </ul>
+        </section>
+        <section class="server">
+            <header>
+                STATS
+            </header>
+            <div class="split"></div>
+            {{#if steam.avatar}}
+            <img src={{steam.avatar}} alt="player" id="player_img" />
+            {{else}}
+            <img src="fragezeichen.png" alt="player" id="player_img" />
+            {{/if}}
+            <ul>
+                <li class="user">{{steam.nick}}</li>
+                <li class="user">{{steam.id}}</li>
+                {{#if rank}}
+                <li class="user">{{rank}}</li>
+                {{else}}
+                <li class="user"></li> <!-- not available -->
+                {{/if}}
+            </ul>
+        </section>
+        <div class="loading">
+            <ul>
+                <li class="load"></li>
+                <li class="load"></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="quote-container" style="position: relative; text-align: center">
+        <p id="quote" style="position: fixed; bottom: 3vh; width:100%;">"Kann Käse eigentlich ablaufen?" - Albert
+            Einstein</p>
+        <script type="text/javascript" src="js/background.js"></script>
+        <script type="text/javascript" src="js/display.js"></script>
+        <script type="text/javascript" src="js/quotes.js"></script>
+</body>
+
+</html>
